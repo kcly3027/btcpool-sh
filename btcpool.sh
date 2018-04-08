@@ -131,3 +131,39 @@ tail -f log_jobmaker/jobmaker.INFO
 cd /work/btcpool/build/run_sserver
 ./sserver -c ./sserver.cfg -l ./log_sserver &
 tail -f log_sserver/sserver.INFO 
+
+#启动blkmaker
+#配置blkmaker
+cd /work/btcpool/build/run_blkmaker
+./blkmaker -c ./blkmaker.cfg -l ./log_blkmaker &
+tail -f log_blkmaker/blkmaker.INFO
+
+#启动sharelogger
+#配置sharelogger
+cd /work/btcpool/build/run_sharelogger
+./sharelogger -c ./sharelogger.cfg -l ./sharelogger &
+#tail -f sharelogger/sharelogger.INFO
+
+
+
+
+
+#安装cgminer
+cd /work/
+apt-get -y install build-essential autoconf automake libtool pkg-config libcurl3-dev libudev-dev
+apt-get -y install libusb-1.0-0-dev
+git clone https://github.com/ckolivas/cgminer.git
+cd cgminer
+sh autogen.sh
+./configure --enable-cpumining --disable-opencl
+make
+
+#cgminer测试
+./cgminer -o stratum+tcp://127.0.0.1:3333 -u ly001.01
+
+./cgminer --cpu-threads 3 --url 127.0.0.1:3333 --userpass ly001.01:
+#./cgminer -o stratum+tcp://127.0.0.1:3333 -u jack -p x --debug --protocol-dump
+#--debug，调试模式
+#--protocol-dump，协议输出
+
+
