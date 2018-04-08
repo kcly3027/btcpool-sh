@@ -22,3 +22,7 @@ kafka-topics.bat --describe --zookeeper 127.0.0.1:2181
 
 
 cgminer --cpu-threads 3 -o stratum+tcp://192.168.42.136:3333 -u kcly3027 -p liuyang3027
+
+ -o stratum+tcp://矿池地址及端口 -u 钱包地址
+
+ -o stratum+tcp://47.104.193.93:3333 -u ly002.001

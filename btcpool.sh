@@ -141,9 +141,23 @@ tail -f log_blkmaker/blkmaker.INFO
 #启动sharelogger
 #配置sharelogger
 cd /work/btcpool/build/run_sharelogger
-./sharelogger -c ./sharelogger.cfg -l ./sharelogger &
-#tail -f sharelogger/sharelogger.INFO
+./sharelogger -c ./sharelogger.cfg -l ./log_sharelogger &
+#tail -f log_sharelogger/sharelogger.INFO
 
+#启动slparser
+#配置slparser
+cd /work/btcpool/build/run_slparser
+./slparser -c ./slparser.cfg -l ./log_slparser &
+
+#启动sharelogger
+#配置sharelogger
+cd /work/btcpool/build/run_statshttpd
+./statshttpd -c ./statshttpd.cfg -l ./log_statshttpd &
+
+#启动poolwatcher 
+#配置poolwatcher 
+cd /work/btcpool/build/run_poolwatcher 
+./poolwatcher -c ./poolwatcher.cfg -l ./log_poolwatcher &
 
 
 
