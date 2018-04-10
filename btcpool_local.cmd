@@ -26,3 +26,7 @@ cgminer --cpu-threads 3 -o stratum+tcp://192.168.42.136:3333 -u kcly3027 -p liuy
  -o stratum+tcp://矿池地址及端口 -u 钱包地址
 
  -o stratum+tcp://47.104.193.93:3333 -u ly002.001 -t 2 
+
+#http://47.104.193.93:8080/worker_status?user_id=111110&worker_id=3257201177373013563
+#http://47.104.193.93:8080/ statshttpd
+#http://47.104.193.93:8081/ slparser
