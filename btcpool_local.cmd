@@ -30,3 +30,4 @@ cgminer --cpu-threads 3 -o stratum+tcp://192.168.42.136:3333 -u kcly3027 -p liuy
 #http://47.104.193.93:8080/worker_status?user_id=111110&worker_id=3257201177373013563
 #http://47.104.193.93:8080/ statshttpd
 #http://47.104.193.93:8081/ slparser
+#http://47.104.193.93:8081/share_stats?user_id=111110&worker_id=3257201177373013563&hour=2018041006
